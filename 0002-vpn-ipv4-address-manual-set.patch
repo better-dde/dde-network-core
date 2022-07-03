@@ -1,0 +1,85 @@
+diff -uNr a/dcc-network-plugin/settings/vpn/vpnl2tpsettings.cpp b/dcc-network-plugin/settings/vpn/vpnl2tpsettings.cpp
+--- a/dcc-network-plugin/settings/vpn/vpnl2tpsettings.cpp	2022-06-27 10:42:20.000000000 +0800
++++ b/dcc-network-plugin/settings/vpn/vpnl2tpsettings.cpp	2022-07-03 14:33:42.852809584 +0800
+@@ -67,7 +67,6 @@
+     VpnIpsecSection *vpnIpsecSection = new VpnIpsecSection(vpnSetting);
+ 
+     IpvxSection *ipv4Section = new IpvxSection(m_connSettings->setting(Setting::SettingType::Ipv4).staticCast<Ipv4Setting>());
+-    ipv4Section->setIpv4ConfigMethodEnable(Ipv4Setting::ConfigMethod::Manual, false);
+     ipv4Section->setNeverDefaultEnable(true);
+     DNSSection *dnsSection = new DNSSection(m_connSettings, false);
+ 
+diff -uNr a/dcc-network-plugin/settings/vpn/vpnopenconnectsettings.cpp b/dcc-network-plugin/settings/vpn/vpnopenconnectsettings.cpp
+--- a/dcc-network-plugin/settings/vpn/vpnopenconnectsettings.cpp	2022-06-27 10:42:20.000000000 +0800
++++ b/dcc-network-plugin/settings/vpn/vpnopenconnectsettings.cpp	2022-07-03 14:33:51.396844537 +0800
+@@ -54,11 +54,9 @@
+     VpnOpenConnectSection *vpnOpenConnectSection = new VpnOpenConnectSection(vpnSetting);
+ 
+     IpvxSection *ipv4Section = new IpvxSection(m_connSettings->setting(Setting::SettingType::Ipv4).staticCast<Ipv4Setting>());
+-    ipv4Section->setIpv4ConfigMethodEnable(Ipv4Setting::ConfigMethod::Manual, false);
+     ipv4Section->setNeverDefaultEnable(true);
+ 
+     IpvxSection *ipv6Section = new IpvxSection(m_connSettings->setting(Setting::SettingType::Ipv6).staticCast<Ipv6Setting>());
+-    ipv6Section->setIpv6ConfigMethodEnable(Ipv6Setting::ConfigMethod::Manual, false);
+     ipv6Section->setNeverDefaultEnable(true);
+     DNSSection *dnsSection = new DNSSection(m_connSettings);
+ 
+diff -uNr a/dcc-network-plugin/settings/vpn/vpnopenvpnsettings.cpp b/dcc-network-plugin/settings/vpn/vpnopenvpnsettings.cpp
+--- a/dcc-network-plugin/settings/vpn/vpnopenvpnsettings.cpp	2022-06-27 10:42:20.000000000 +0800
++++ b/dcc-network-plugin/settings/vpn/vpnopenvpnsettings.cpp	2022-07-03 14:33:59.840879083 +0800
+@@ -62,11 +62,9 @@
+     VpnProxySection *vpnProxySection = new VpnProxySection(vpnSetting);
+ 
+     IpvxSection *ipv4Section = new IpvxSection(m_connSettings->setting(Setting::SettingType::Ipv4).staticCast<Ipv4Setting>());
+-    ipv4Section->setIpv4ConfigMethodEnable(Ipv4Setting::ConfigMethod::Manual, false);
+     ipv4Section->setNeverDefaultEnable(true);
+ 
+     IpvxSection *ipv6Section = new IpvxSection(m_connSettings->setting(Setting::SettingType::Ipv6).staticCast<Ipv6Setting>());
+-    ipv6Section->setIpv6ConfigMethodEnable(Ipv6Setting::ConfigMethod::Manual, false);
+     ipv6Section->setNeverDefaultEnable(true);
+ 
+     DNSSection *dnsSection = new DNSSection(m_connSettings);
+diff -uNr a/dcc-network-plugin/settings/vpn/vpnpptpsettings.cpp b/dcc-network-plugin/settings/vpn/vpnpptpsettings.cpp
+--- a/dcc-network-plugin/settings/vpn/vpnpptpsettings.cpp	2022-06-27 10:42:20.000000000 +0800
++++ b/dcc-network-plugin/settings/vpn/vpnpptpsettings.cpp	2022-07-03 14:34:04.920899867 +0800
+@@ -62,7 +62,6 @@
+ 
+     vpnPPPSection->setSupportOptions(supportOptions);
+     IpvxSection *ipv4Section = new IpvxSection(m_connSettings->setting(Setting::SettingType::Ipv4).staticCast<Ipv4Setting>());
+-    ipv4Section->setIpv4ConfigMethodEnable(Ipv4Setting::ConfigMethod::Manual, false);
+     ipv4Section->setNeverDefaultEnable(true);
+     DNSSection *dnsSection = new DNSSection(m_connSettings, false);
+ 
+diff -uNr a/dcc-network-plugin/settings/vpn/vpnsstpsettings.cpp b/dcc-network-plugin/settings/vpn/vpnsstpsettings.cpp
+--- a/dcc-network-plugin/settings/vpn/vpnsstpsettings.cpp	2022-06-27 10:42:20.000000000 +0800
++++ b/dcc-network-plugin/settings/vpn/vpnsstpsettings.cpp	2022-07-03 14:34:09.856920062 +0800
+@@ -62,7 +62,6 @@
+     vpnPPPSection->setSupportOptions(supportOptions);
+     VpnSstpProxySection *vpnProxySection = new VpnSstpProxySection(vpnSetting);
+     IpvxSection *ipv4Section = new IpvxSection(m_connSettings->setting(Setting::SettingType::Ipv4).staticCast<Ipv4Setting>());
+-    ipv4Section->setIpv4ConfigMethodEnable(Ipv4Setting::ConfigMethod::Manual, false);
+     ipv4Section->setNeverDefaultEnable(true);
+     DNSSection *dnsSection = new DNSSection(m_connSettings, false);
+ 
+diff -uNr a/dcc-network-plugin/settings/vpn/vpnstrongswansettings.cpp b/dcc-network-plugin/settings/vpn/vpnstrongswansettings.cpp
+--- a/dcc-network-plugin/settings/vpn/vpnstrongswansettings.cpp	2022-06-27 10:42:20.000000000 +0800
++++ b/dcc-network-plugin/settings/vpn/vpnstrongswansettings.cpp	2022-07-03 14:34:16.156945839 +0800
+@@ -54,7 +54,6 @@
+     VpnStrongSwanSection *vpnStrongSwanSection = new VpnStrongSwanSection(vpnSetting);
+ 
+     IpvxSection *ipv4Section = new IpvxSection(m_connSettings->setting(Setting::SettingType::Ipv4).staticCast<Ipv4Setting>());
+-    ipv4Section->setIpv4ConfigMethodEnable(Ipv4Setting::ConfigMethod::Manual, false);
+     ipv4Section->setNeverDefaultEnable(true);
+     DNSSection *dnsSection = new DNSSection(m_connSettings, false);
+ 
+diff -uNr a/dcc-network-plugin/settings/vpn/vpnvpncsettings.cpp b/dcc-network-plugin/settings/vpn/vpnvpncsettings.cpp
+--- a/dcc-network-plugin/settings/vpn/vpnvpncsettings.cpp	2022-06-27 10:42:20.000000000 +0800
++++ b/dcc-network-plugin/settings/vpn/vpnvpncsettings.cpp	2022-07-03 14:34:22.228970684 +0800
+@@ -52,7 +52,6 @@
+     VpnVPNCSection *vpnVPNCSection = new VpnVPNCSection(vpnSetting);
+     VpnAdvVPNCSection *vpnAdvVPNCSection = new VpnAdvVPNCSection(vpnSetting);
+     IpvxSection *ipv4Section = new IpvxSection(m_connSettings->setting(Setting::SettingType::Ipv4).staticCast<Ipv4Setting>());
+-    ipv4Section->setIpv4ConfigMethodEnable(Ipv4Setting::ConfigMethod::Manual, false);
+     ipv4Section->setNeverDefaultEnable(true);
+     DNSSection *dnsSection = new DNSSection(m_connSettings, false);
+ 

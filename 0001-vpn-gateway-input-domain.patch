@@ -1,0 +1,60 @@
+diff -uNr a/dcc-network-plugin/sections/vpn/vpnopenconnectsection.cpp b/dcc-network-plugin/sections/vpn/vpnopenconnectsection.cpp
+--- a/dcc-network-plugin/sections/vpn/vpnopenconnectsection.cpp	2022-06-27 10:42:20.000000000 +0800
++++ b/dcc-network-plugin/sections/vpn/vpnopenconnectsection.cpp	2022-07-03 08:53:15.691729380 +0800
+@@ -56,7 +56,7 @@
+ {
+     bool valid = true;
+ 
+-    if (m_gateway->text().isEmpty() || !isIpv4Address(m_gateway->text())) {
++    if (m_gateway->text().isEmpty()) {
+         valid = false;
+         m_gateway->setIsErr(true);
+         m_gateway->dTextEdit()->showAlertMessage(tr("Invalid gateway"), parentWidget(), 2000);
+diff -uNr a/dcc-network-plugin/sections/vpn/vpnopenvpnsection.cpp b/dcc-network-plugin/sections/vpn/vpnopenvpnsection.cpp
+--- a/dcc-network-plugin/sections/vpn/vpnopenvpnsection.cpp	2022-06-27 10:42:20.000000000 +0800
++++ b/dcc-network-plugin/sections/vpn/vpnopenvpnsection.cpp	2022-07-03 08:49:15.189619320 +0800
+@@ -59,7 +59,7 @@
+ {
+     bool valid = true;
+ 
+-    if (m_gateway->text().isEmpty() || !isIpv4Address(m_gateway->text())) {
++    if (m_gateway->text().isEmpty()) {
+         valid = false;
+         m_gateway->setIsErr(true);
+         m_gateway->dTextEdit()->showAlertMessage(tr("Invalid gateway"), parentWidget(), 2000);
+diff -uNr a/dcc-network-plugin/sections/vpn/vpnsection.cpp b/dcc-network-plugin/sections/vpn/vpnsection.cpp
+--- a/dcc-network-plugin/sections/vpn/vpnsection.cpp	2022-06-27 10:42:20.000000000 +0800
++++ b/dcc-network-plugin/sections/vpn/vpnsection.cpp	2022-07-03 08:49:21.585675560 +0800
+@@ -60,7 +60,7 @@
+ {
+     bool valid = true;
+ 
+-    if (m_gateway->text().isEmpty() || !isIpv4Address(m_gateway->text())) {
++    if (m_gateway->text().isEmpty()) {
+         valid = false;
+         m_gateway->setIsErr(true);
+         m_gateway->dTextEdit()->showAlertMessage(tr("Invalid gateway"), parentWidget(), 2000);
+diff -uNr a/dcc-network-plugin/sections/vpn/vpnstrongswansection.cpp b/dcc-network-plugin/sections/vpn/vpnstrongswansection.cpp
+--- a/dcc-network-plugin/sections/vpn/vpnstrongswansection.cpp	2022-06-27 10:42:20.000000000 +0800
++++ b/dcc-network-plugin/sections/vpn/vpnstrongswansection.cpp	2022-07-03 08:49:27.469727290 +0800
+@@ -69,7 +69,7 @@
+ {
+     bool valid = true;
+ 
+-    if (m_gateway->text().isEmpty() || !isIpv4Address(m_gateway->text())) {
++    if (m_gateway->text().isEmpty()) {
+         valid = false;
+         m_gateway->setIsErr(true);
+         m_gateway->dTextEdit()->showAlertMessage(tr("Invalid gateway"), parentWidget(), 2000);
+diff -uNr a/dcc-network-plugin/sections/vpn/vpnvpncsection.cpp b/dcc-network-plugin/sections/vpn/vpnvpncsection.cpp
+--- a/dcc-network-plugin/sections/vpn/vpnvpncsection.cpp	2022-06-27 10:42:20.000000000 +0800
++++ b/dcc-network-plugin/sections/vpn/vpnvpncsection.cpp	2022-07-03 08:47:57.240933111 +0800
+@@ -70,7 +70,7 @@
+ {
+     bool valid = true;
+ 
+-    if (m_gateway->text().isEmpty() || !isIpv4Address(m_gateway->text())) {
++    if (m_gateway->text().isEmpty()) {
+         valid = false;
+         m_gateway->setIsErr(true);
+         m_gateway->dTextEdit()->showAlertMessage(tr("Invalid gateway"), parentWidget(), 2000);
